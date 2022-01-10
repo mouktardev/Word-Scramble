@@ -29,19 +29,29 @@ const Board = ({ slug, dictionary }) => {
   };
   useEffect(() => {
     if (yourAnswer.length > 0 && yourAnswer.length != anagrams.length) {
-      tl.from(Array.from(boardLetters.current.at(-1).children), {
-        scale: 0,
-        autoAlpha: 0,
-        stagger: 0.3,
-        ease: "power1.inOut",
-      });
+      tl.from(
+        Array.from(
+          boardLetters.current[boardLetters.current.length - 1].children
+        ),
+        {
+          scale: 0,
+          autoAlpha: 0,
+          stagger: 0.3,
+          ease: "power1.inOut",
+        }
+      );
     } else if (yourAnswer.length == anagrams.length) {
-      tl.from(Array.from(boardLetters.current.at(-1).children), {
-        scale: 0,
-        autoAlpha: 0,
-        stagger: 0.3,
-        ease: "power1.inOut",
-      });
+      tl.from(
+        Array.from(
+          boardLetters.current[boardLetters.current.length - 1].children
+        ),
+        {
+          scale: 0,
+          autoAlpha: 0,
+          stagger: 0.3,
+          ease: "power1.inOut",
+        }
+      );
       setVisible(true);
     } else {
       tl.from(boardHolders.current, {
