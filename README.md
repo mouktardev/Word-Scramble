@@ -1,4 +1,4 @@
-# ANAGRAM GAME
+# Word Game
 
 ## 👀 Want to know more about me?
 
