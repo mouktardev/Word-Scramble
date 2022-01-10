@@ -98,7 +98,7 @@ const Dial = ({ letters, anagrams }) => {
         className="font-poppins font-bold uppercase  text-fuchsia-900 mx-auto text-4xl py-2 px-10 mt-10 drop-shadow-lg border-2 border-purple-900 bg-fuchsia-300 active:bg-fuchsia-600 rounded-lg"
         onClick={() => submitAnswer()}
       >
-        Paly
+        Play
       </button>
     </>
   );
