@@ -1,0 +1,11 @@
+---
+// Component Imports
+import WelcomeScreen from "/src/components/WelcomeScreen.jsx";
+import BaseLayout from "/src/layouts/BaseLayout.astro";
+
+const levels = ["cat", "tank"];
+---
+
+<BaseLayout title="Word Game">
+  <WelcomeScreen {levels} client:load />
+</BaseLayout>

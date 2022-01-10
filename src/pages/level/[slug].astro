@@ -1,0 +1,16 @@
+---
+import Board from "../../components/Board.jsx";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  return [{ params: { slug: "cat" } }, { params: { slug: "tank" } }];
+}
+const dictionary = await fetch("../../../public/dictionary_compact.json").then(
+  (response) => response.json()
+);
+const { slug } = Astro.request.params;
+---
+
+<BaseLayout title="Word Game">
+  <Board {slug} {dictionary} client:load />
+</BaseLayout>
