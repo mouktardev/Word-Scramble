@@ -61,7 +61,6 @@ const Board = ({ slug, next, dictionary }) => {
         ease: "power1.inOut",
       });
     }
-    console.log(anagrams);
   }, [yourAnswer]);
 
   return (

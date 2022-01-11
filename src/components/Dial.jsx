@@ -74,7 +74,7 @@ const Dial = ({ letters, anagrams }) => {
   return (
     <>
       <ul
-        className="relative w-80 h-80 rounded-full mx-auto overflow-hidden border-8 border-purple-900 drop-shadow-xl bg-purple-400"
+        className="relative w-72 h-72 rounded-full mx-auto overflow-hidden border-8 border-purple-900 drop-shadow-xl bg-purple-400"
         ref={(el) => (wrapper = el)}
       >
         {[...letters].map((letter, i) => (
