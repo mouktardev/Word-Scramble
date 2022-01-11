@@ -3,14 +3,19 @@ import Board from "../../components/Board.jsx";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  return [{ params: { slug: "cat" } }, { params: { slug: "tank" } }];
+  const levels = ["cat", "tank", "ksadr", "lartf"];
+  return levels.map((level, i) => ({
+    params: { slug: `${level}` },
+    props: { next: `${levels?.[i + 1]}` },
+  }));
 }
 const dictionary = await fetch("../../../public/dictionary_compact.json").then(
   (response) => response.json()
 );
 const { slug } = Astro.request.params;
+const { next } = Astro.props;
 ---
 
 <BaseLayout title="Word Game">
-  <Board {slug} {dictionary} client:load />
+  <Board {slug} {next} {dictionary} client:load />
 </BaseLayout>

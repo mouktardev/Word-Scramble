@@ -8,7 +8,7 @@ import Dial from "./Dial";
 import Player from "./Player";
 import confetti from "../../public/confetti.json";
 
-const Board = ({ slug, dictionary }) => {
+const Board = ({ slug, next, dictionary }) => {
   const [visible, setVisible] = useState(false);
   const yourAnswer = useStore(answers);
   const yourRecord = useStore(count);
@@ -61,6 +61,7 @@ const Board = ({ slug, dictionary }) => {
         ease: "power1.inOut",
       });
     }
+    console.log(anagrams);
   }, [yourAnswer]);
 
   return (
@@ -101,12 +102,14 @@ const Board = ({ slug, dictionary }) => {
           <h1 className="animate-glow animation-delay-300 card text-5xl text-white text-center font-poppins font-extrabold uppercase">
             you win
           </h1>
-          <a
-            href="#"
-            className="font-poppins font-bold uppercase  text-fuchsia-900 mx-auto text-2xl py-2 px-10 mt-10 drop-shadow-lg border-2 border-purple-900 bg-fuchsia-300 active:bg-fuchsia-600 rounded-lg"
-          >
-            go to next level
-          </a>
+          {next != "undefined" && (
+            <a
+              href={`/level/${next}`}
+              className="font-poppins font-bold uppercase  text-fuchsia-900 mx-auto text-2xl py-2 px-10 mt-10 drop-shadow-lg border-2 border-purple-900 bg-fuchsia-300 active:bg-fuchsia-600 rounded-lg"
+            >
+              go to next level
+            </a>
+          )}
         </div>
       ) : (
         <Dial letters={slug} anagrams={anagrams} />

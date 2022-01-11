@@ -2,9 +2,6 @@ import { h, Component } from "preact";
 import { useEffect, useState, useRef } from "preact/hooks";
 
 const WelcomeScreen = ({ levels }) => {
-  const word = "words";
-  useEffect(() => {}, []);
-
   return (
     <div className="relative container flex flex-col mx-auto p-4">
       <div className="h-screen flex flex-col justify-center items-center p-4">
