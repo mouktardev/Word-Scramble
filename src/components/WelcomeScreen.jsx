@@ -13,6 +13,7 @@ const WelcomeScreen = ({ levels }) => {
             game
           </div>
         </div>
+        <p className="text-white">Challenge for margot_the_</p>
         {levels.map((level, i) => (
           <a
             href={`/level/${level}`}
